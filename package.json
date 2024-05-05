@@ -12,9 +12,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
+    "@cucumber/cucumber": "^10.6.0",
     "@playwright/test": "^1.41.1",
-    "@types/node": "^20.11.9"
+    "@types/node": "^20.11.9",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
     "dotenv": "^16.4.5"
