@@ -22,9 +22,9 @@ When("Adds a new todo {string}", async function (string) {
 });
 
 Then(
-  "They see message {string} and todo added with {string} on {string} position",
+  "They see the message {string} and a {string} todo added with {string} text",
   async function (string, string2, string3) {
     await todo.checkCountOfTodos(string);
-    await todo.validateTodoText(string2, string3);
+    await todo.validateTodoText(string3, string2);
   }
 );
