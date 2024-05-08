@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e": "npx playwright test tests/",
-    "test:e2e:all": "npx playwright test tests --project=all-browsers-and-tests",
-    "test:e2e:smoke": "npx playwright test --grep @smoke",
-    "test:open": "npx playwright test --ui"
+    "test": "npx cucumber-js --exit",
+    "regression": "npx cucumber-js --tags '@Regression' --exit",
+    "report": "npx cucumber-js --format html:cucumber-report.html --exit"
   },
   "keywords": [],
   "author": "",

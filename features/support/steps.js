@@ -1,4 +1,3 @@
-import assert from "assert";
 import { chromium } from "@playwright/test";
 import { When, Then, Given } from "@cucumber/cucumber";
 import TodoPage from "../../pages/TodoPage.js";
@@ -15,6 +14,8 @@ const todo = new TodoPage(page);
 
 Given("User is landing on the Todo app", async function () {
   await todo.visit();
+  await todo.checkHeader();
+  await todo.checkTitle();
 });
 
 When("Adds a new todo {string}", async function (string) {
