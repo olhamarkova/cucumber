@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx cucumber-js --exit",
     "regression": "npx cucumber-js --tags '@Regression' --exit",
-    "report": "npx cucumber-js --format html:cucumber-report.html --exit"
+    "report": "npx cucumber-js --format html:cucumber-report.html --exit",
+    "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter features --exit"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@cucumber/cucumber": "^10.6.0",
     "@playwright/test": "^1.41.1",
     "@types/node": "^20.11.9",
+    "cucumberjs-qase-reporter": "^2.0.0",
     "ts-node": "^10.9.2"
   },
   "dependencies": {

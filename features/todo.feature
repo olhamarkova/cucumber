@@ -1,6 +1,6 @@
 Feature: Creating ToDos
 
-  @Regression
+  @Regression @Q-TODOMVC-3
   Scenario: Add a new todo
     Given User is landing on the Todo app
     When Adds a new todo "<todo>"
