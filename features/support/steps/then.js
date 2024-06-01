@@ -1,31 +1,31 @@
 import { Then } from "@cucumber/cucumber";
-import TodoPage from "../../../pages/TodoPage.js";
+import { TodoAssertions } from "../../../app/assertions.js";
 
-const todo = new TodoPage();
+const assert = new TodoAssertions();
 
 Then(
   "They see the message {string} and a {string} todo added with {string} text",
   async function (string, string2, string3) {
-    await todo.checkCountOfTodos(string);
-    await todo.validateTodoText(string3, string2);
+    await assert.checkCountOfTodos(string);
+    await assert.validateTodoText(string3, string2);
   }
 );
 
 Then("The page title should be {string}", async function (title) {
-  await todo.checkTitle(title);
+  await assert.checkTitle(title);
 });
 
 Then("The heading {string} should be visible", async function (heading) {
-  await todo.checkHeader(heading);
+  await assert.checkHeader(heading);
 });
 
 Then(
   "The input field with placeholder {string} should be visible",
   async function (placeholder) {
-    await todo.validateInput(placeholder);
+    await assert.validateInput(placeholder);
   }
 );
 
 Then("The footer contains {string}", async (info) => {
-  await todo.validateFooterInfo(info);
+  await assert.validateFooterInfo(info);
 });

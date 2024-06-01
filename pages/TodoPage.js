@@ -27,43 +27,4 @@ export default class TodoPage {
   newTodoInput(placeholder) {
     return this.page.getByPlaceholder(placeholder);
   }
-
-  //actions
-  async visit() {
-    await this.page.goto(this.url);
-  }
-
-  async addNewTodo(todo) {
-    await this.newTodoInput(text.placeholder).fill(todo);
-    await this.newTodoInput(text.placeholder).press("Enter");
-  }
-
-  async toggleTodo() {
-    await this.toggleNewTodo.click();
-  }
-
-  //validations and checks
-  async checkTitle(title) {
-    await expect(this.page).toHaveTitle(title);
-  }
-
-  async checkHeader(heading) {
-    await expect(this.header).toHaveText(heading);
-  }
-
-  async validateTodoText(text, index) {
-    await expect(this.todoLabel.nth(index - 1)).toHaveText(text);
-  }
-
-  async checkCountOfTodos(msg) {
-    await expect(this.page.getByText(msg)).toBeVisible();
-  }
-
-  async validateInput(placeholder) {
-    await expect(this.newTodoInput(placeholder)).toBeVisible();
-  }
-
-  async validateFooterInfo(info) {
-    await expect(this.footerInfo(info)).toBeVisible();
-  }
 }

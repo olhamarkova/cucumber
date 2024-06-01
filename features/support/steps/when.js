@@ -1,7 +1,7 @@
 import { When } from "@cucumber/cucumber";
-import TodoPage from "../../../pages/TodoPage.js";
+import { TodoActions } from "../../../app/actions.js";
 
-const todo = new TodoPage();
+const todo = new TodoActions();
 
 When("Adds a new todo {string}", async function (string) {
   await todo.addNewTodo(string);
