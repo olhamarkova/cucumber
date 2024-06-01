@@ -23,6 +23,7 @@ export default class TodoPage {
     return this.page.getByPlaceholder(placeholder);
   }
 
+  //actions
   async visit() {
     await this.page.goto(this.url);
   }
@@ -30,10 +31,6 @@ export default class TodoPage {
   async addNewTodo(todo) {
     await this.newTodoInput(text.placeholder).fill(todo);
     await this.newTodoInput(text.placeholder).press("Enter");
-  }
-
-  async checkCountOfTodos(msg) {
-    await expect(this.page.getByText(msg)).toBeVisible();
   }
 
   async toggleTodo() {
@@ -51,6 +48,10 @@ export default class TodoPage {
 
   async validateTodoText(text, index) {
     await expect(this.todoLabel.nth(index - 1)).toHaveText(text);
+  }
+
+  async checkCountOfTodos(msg) {
+    await expect(this.page.getByText(msg)).toBeVisible();
   }
 
   async validateInput(placeholder) {
