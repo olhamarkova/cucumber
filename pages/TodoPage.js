@@ -1,8 +1,17 @@
 import { expect } from "@playwright/test";
+import { chromium } from "@playwright/test";
 import { text } from "../dataProviders/pageDP.js";
 
+let page;
+let browser;
+
+browser = await chromium.launch({
+  headless: false,
+});
+page = await browser.newPage();
+
 export default class TodoPage {
-  constructor(page) {
+  constructor() {
     this.page = page;
     this.url = "https://todomvc.com/examples/react/dist/";
     this.header = this.page.locator("h1");
