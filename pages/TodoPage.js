@@ -14,9 +14,14 @@ export default class TodoPage {
   constructor() {
     this.page = page;
     this.url = "https://todomvc.com/examples/react/dist/";
+    this.mainPageURL = this.page.locator("footer.info p a");
     this.header = this.page.locator("h1");
     this.toggleNewTodo = this.page.getByTestId("todo-item-toggle");
     this.todoLabel = this.page.locator("label[data-testid='todo-item-label']");
+  }
+
+  footerInfo(info) {
+    return this.page.locator("footer.info p").getByText(info);
   }
 
   newTodoInput(placeholder) {
@@ -56,5 +61,9 @@ export default class TodoPage {
 
   async validateInput(placeholder) {
     await expect(this.newTodoInput(placeholder)).toBeVisible();
+  }
+
+  async validateFooterInfo(info) {
+    await expect(this.footerInfo(info)).toBeVisible();
   }
 }

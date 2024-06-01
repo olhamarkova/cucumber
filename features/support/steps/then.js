@@ -25,3 +25,7 @@ Then(
     await todo.validateInput(placeholder);
   }
 );
+
+Then("The footer contains {string}", async (info) => {
+  await todo.validateFooterInfo(info);
+});
