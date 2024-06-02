@@ -16,4 +16,8 @@ export class TodoActions {
   async toggleTodo() {
     await this.todoPage.toggleNewTodo.click();
   }
+
+  async openMainPage() {
+    await this.todoPage.mainPageURL.click();
+  }
 }

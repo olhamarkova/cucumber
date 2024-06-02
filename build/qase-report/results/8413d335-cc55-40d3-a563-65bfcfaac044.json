@@ -1,0 +1,60 @@
+{
+    "attachments": [],
+    "author": null,
+    "execution": {
+        "status": "passed",
+        "start_time": null,
+        "end_time": null,
+        "duration": 0,
+        "stacktrace": null,
+        "thread": null
+    },
+    "fields": {},
+    "message": null,
+    "muted": false,
+    "params": {},
+    "relations": null,
+    "run_id": null,
+    "signature": "",
+    "steps": [
+        {
+            "id": "844fe4d3-5c8c-466c-a185-b59dbacec1cb",
+            "step_type": "gherkin",
+            "data": {
+                "keyword": "User is landing on the Todo app",
+                "name": "User is landing on the Todo app",
+                "line": 0
+            },
+            "execution": {
+                "status": "passed",
+                "start_time": null,
+                "end_time": null,
+                "duration": 0
+            },
+            "attachments": [],
+            "steps": [],
+            "parent_id": null
+        },
+        {
+            "id": "7435e68b-0862-4ab1-86e8-60f401d3d4a4",
+            "step_type": "gherkin",
+            "data": {
+                "keyword": "The footer contains 'Part of TodoMVC'",
+                "name": "The footer contains 'Part of TodoMVC'",
+                "line": 0
+            },
+            "execution": {
+                "status": "passed",
+                "start_time": null,
+                "end_time": null,
+                "duration": 0
+            },
+            "attachments": [],
+            "steps": [],
+            "parent_id": null
+        }
+    ],
+    "testops_id": 2,
+    "id": "8413d335-cc55-40d3-a563-65bfcfaac044",
+    "title": "User shall see information on the footer"
+}

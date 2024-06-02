@@ -1,0 +1,78 @@
+{
+    "attachments": [],
+    "author": null,
+    "execution": {
+        "status": "passed",
+        "start_time": null,
+        "end_time": null,
+        "duration": 0,
+        "stacktrace": null,
+        "thread": null
+    },
+    "fields": {},
+    "message": null,
+    "muted": false,
+    "params": {},
+    "relations": null,
+    "run_id": null,
+    "signature": "",
+    "steps": [
+        {
+            "id": "7f0937f2-93a5-4ba0-8f34-25ba74fdafe5",
+            "step_type": "gherkin",
+            "data": {
+                "keyword": "User is on the Todo app page",
+                "name": "User is on the Todo app page",
+                "line": 0
+            },
+            "execution": {
+                "status": "passed",
+                "start_time": null,
+                "end_time": null,
+                "duration": 0
+            },
+            "attachments": [],
+            "steps": [],
+            "parent_id": null
+        },
+        {
+            "id": "b1931045-c524-4d30-b39a-0ba308905263",
+            "step_type": "gherkin",
+            "data": {
+                "keyword": "Adds a new todo \"Do laundry\"",
+                "name": "Adds a new todo \"Do laundry\"",
+                "line": 0
+            },
+            "execution": {
+                "status": "passed",
+                "start_time": null,
+                "end_time": null,
+                "duration": 0
+            },
+            "attachments": [],
+            "steps": [],
+            "parent_id": null
+        },
+        {
+            "id": "5a2d2027-3ed6-4d10-af89-0dbebf4cb820",
+            "step_type": "gherkin",
+            "data": {
+                "keyword": "They see the message \"1 item left!\" and a \"1\" todo added with \"Do laundry\" text",
+                "name": "They see the message \"1 item left!\" and a \"1\" todo added with \"Do laundry\" text",
+                "line": 0
+            },
+            "execution": {
+                "status": "passed",
+                "start_time": null,
+                "end_time": null,
+                "duration": 0
+            },
+            "attachments": [],
+            "steps": [],
+            "parent_id": null
+        }
+    ],
+    "testops_id": 3,
+    "id": "07c8d7e7-b70b-4db4-90ce-08c071797b41",
+    "title": "User shall add a new todo"
+}

@@ -29,3 +29,7 @@ Then(
 Then("The footer contains {string}", async (info) => {
   await assert.validateFooterInfo(info);
 });
+
+Then("The {string} page is opened", async function (title) {
+  await assert.checkTitle(title);
+});
