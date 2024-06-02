@@ -8,3 +8,4 @@ node_modules/
 qase.config.json
 logs
 cucumber-report.html
+build/
