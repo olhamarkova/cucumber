@@ -2,7 +2,7 @@ Feature: Verify information on the footer of TodoMVC app
 
 @Smoke @Q-2
   Scenario: User shall see information on the footer
-    Given User is landing on the Todo app
+    When User is landing on the Todo app
     Then The footer contains '<information>'
 
     Examples:
