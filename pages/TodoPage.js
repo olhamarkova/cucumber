@@ -13,11 +13,13 @@ page = await browser.newPage();
 export default class TodoPage {
   constructor() {
     this.page = page;
-    this.url = "https://todomvc.com/examples/react/dist/";
     this.mainPageURL = this.page.locator("footer.info p a");
     this.header = this.page.locator("h1");
-    this.toggleNewTodo = this.page.getByTestId("todo-item-toggle");
-    this.todoLabel = this.page.locator("label[data-testid='todo-item-label']");
+    this.todoLabel = this.page.getByTestId("todo-item-label");
+  }
+
+  toggleTodoCheckbox(index) {
+    return this.page.getByTestId("todo-item-toggle").nth(index - 1);
   }
 
   footerInfo(info) {

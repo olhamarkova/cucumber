@@ -6,7 +6,7 @@ const assert = new TodoAssertions();
 Then(
   "They see the message {string} and a {string} todo added with {string} text",
   async function (string, string2, string3) {
-    await assert.checkCountOfTodos(string);
+    await assert.validateTodoCountMsg(string);
     await assert.validateTodoText(string3, string2);
   }
 );

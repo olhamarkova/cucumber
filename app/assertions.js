@@ -16,7 +16,7 @@ export class TodoAssertions {
     await expect(this.todoPage.todoLabel.nth(index - 1)).toHaveText(text);
   }
 
-  async checkCountOfTodos(msg) {
+  async validateTodoCountMsg(msg) {
     await expect(this.todoPage.page.getByText(msg)).toBeVisible();
   }
 
