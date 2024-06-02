@@ -1,4 +1,7 @@
 Feature: Verify information on the footer of TodoMVC app
+  As a TodoMVC user
+  I want to be able to see information about the company in the footer and the link to the main page
+  So I know how to edit todo and I can go to the main page of the application
 
   @Smoke @Q-2
   Scenario: User shall see information on the footer

@@ -1,4 +1,7 @@
 Feature: Open TodoMVC app
+  As a TodoMVC user
+  I want to be able to open the app
+  So I will be able to work with it
 
   @Smoke @Q-1
   Scenario: User shall open the TodoMVC app

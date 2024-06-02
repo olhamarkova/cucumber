@@ -1,4 +1,7 @@
-Feature: Creating ToDos
+Feature: Creating Todos
+  As a TodoMVC user
+  I want to be able to add a new todo
+  So I can have a to-do list
 
   @Regression @Q-3
   Scenario: User shall add a new todo
