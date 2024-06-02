@@ -5,9 +5,9 @@ Feature: Creating Todos
 
   @Regression @Q-3
   Scenario: User shall add a new todo
-    Given User is on the Todo app page
-    When Adds a new todo "<todo>"
-    Then They see the message "<message>" and a "1" todo added with "<todo>" text
+    Given user is on the Todo app page
+    When they add a new todo "<todo>"
+    Then they see the message "<message>" and a "1" todo added with "<todo>" text
 
   
   Examples:

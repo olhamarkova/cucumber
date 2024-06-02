@@ -3,14 +3,14 @@ import { TodoActions } from "../../../app/actions.js";
 
 const todo = new TodoActions();
 
-When("User is landing on the Todo app", async function () {
+When("user is landing on the Todo app", async function () {
   await todo.visit();
 });
 
-When("Adds a new todo {string}", async function (string) {
+When("they add a new todo {string}", async function (string) {
   await todo.addNewTodo(string);
 });
 
-When("User clicks on the TodoMVC link in the footer", async function () {
+When("they click on the TodoMVC link in the footer", async function () {
   await todo.openMainPage();
 });

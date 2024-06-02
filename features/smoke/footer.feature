@@ -5,8 +5,8 @@ Feature: Verify information on the footer of TodoMVC app
 
   @Smoke @Q-2
   Scenario: User shall see information on the footer
-    When User is landing on the Todo app
-    Then The footer contains '<information>'
+    When user is landing on the Todo app
+    Then the footer contains '<information>'
 
     Examples:
     |information                           |
@@ -17,6 +17,6 @@ Feature: Verify information on the footer of TodoMVC app
 
   @Smoke @Q-14
   Scenario: User shall open the main page by clicking on TodoMVC link in the footer
-    Given User is on the Todo app page
-    When User clicks on the TodoMVC link in the footer
-    Then The "TodoMVC" page is opened
+    Given user is on the Todo app page
+    When they click on the TodoMVC link in the footer
+    Then the "TodoMVC" page is opened
