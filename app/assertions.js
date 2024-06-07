@@ -27,4 +27,8 @@ export class TodoAssertions {
   async validateFooterInfo(info) {
     await expect(this.todoPage.footerInfo(info)).toBeVisible();
   }
+
+  async validateActiveFilter(filterText) {
+    await expect(this.todoPage.filter(filterText)).toHaveClass("selected");
+  }
 }

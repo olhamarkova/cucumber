@@ -1,4 +1,3 @@
-import { expect } from "@playwright/test";
 import { chromium } from "@playwright/test";
 import { text } from "../dataProviders/pageDP.js";
 
@@ -16,6 +15,7 @@ export default class TodoPage {
     this.mainPageURL = this.page.locator("footer.info p a");
     this.header = this.page.locator("h1");
     this.todoLabel = this.page.getByTestId("todo-item-label");
+    this.deleteTodoButton = this.page.getByTestId("todo-item-button");
   }
 
   toggleTodoCheckbox(index) {
@@ -28,5 +28,12 @@ export default class TodoPage {
 
   newTodoInput(placeholder) {
     return this.page.getByPlaceholder(placeholder);
+  }
+
+  //check
+  filter(filterText) {
+    return this.page
+      .locator('ul[data-testid="footer-navigation"] li a')
+      .filter({ hasText: filterText });
   }
 }
