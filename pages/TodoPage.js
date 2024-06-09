@@ -1,42 +1,42 @@
-import { expect } from "@playwright/test";
-import { text } from "../dataProviders/pageDP.js";
+import { chromium } from "@playwright/test";
+import { text } from "../data/pageDP.js";
+
+let page;
+let browser;
+
+browser = await chromium.launch({
+  headless: false,
+});
+page = await browser.newPage();
 
 export default class TodoPage {
-  constructor(page) {
+  constructor() {
     this.page = page;
-    this.url = "https://todomvc.com/examples/react/dist/";
+    this.mainPageURL = this.page.locator("footer.info p a");
     this.header = this.page.locator("h1");
-    this.newTodoInput = this.page.getByPlaceholder(text.placeholder);
-    this.toggleNewTodo = this.page.getByTestId("todo-item-toggle");
-    this.todoLabel = this.page.locator("label[data-testid='todo-item-label']");
+    this.todoLabel = this.page.getByTestId("todo-item-label");
+    this.deleteTodoButton = this.page.getByTestId("todo-item-button");
   }
 
-  async visit() {
-    await this.page.goto(this.url);
+  editTodoInput(todo) {
+    return this.page.locator(`#todo-input[value="${todo}"]`);
   }
 
-  async checkTitle() {
-    await expect(this.page).toHaveTitle(text.title);
+  toggleTodoCheckbox(index) {
+    return this.page.getByTestId("todo-item-toggle").nth(index - 1);
   }
 
-  async checkHeader() {
-    await expect(this.header).toHaveText(text.heading);
+  footerInfo(info) {
+    return this.page.locator("footer.info p").getByText(info);
   }
 
-  async addNewTodo(text) {
-    await this.newTodoInput.fill(text);
-    await this.newTodoInput.press("Enter");
+  newTodoInput(placeholder) {
+    return this.page.getByPlaceholder(placeholder);
   }
 
-  async validateTodoText(text, index) {
-    await expect(this.todoLabel.nth(index - 1)).toHaveText(text);
-  }
-
-  async checkCountOfTodos(msg) {
-    await expect(this.page.getByText(msg)).toBeVisible();
-  }
-
-  async toggleTodo() {
-    await this.toggleNewTodo.click();
+  filter(filterText) {
+    return this.page
+      .locator('ul[data-testid="footer-navigation"] li a')
+      .filter({ hasText: filterText });
   }
 }

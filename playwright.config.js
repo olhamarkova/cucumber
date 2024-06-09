@@ -26,7 +26,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    //baseURL: '',
+    baseURL: process.env.URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
@@ -37,7 +37,7 @@ export default defineConfig({
     {
       name: "chrome",
       use: {
-        baseURL: "https://todomvc.com/examples/react/dist/",
+        baseURL: process.env.URL,
         ...devices["Desktop Chrome"],
       },
     },
@@ -45,7 +45,7 @@ export default defineConfig({
     {
       name: "firefox",
       use: {
-        baseURL: "https://todomvc.com/examples/react/dist/",
+        baseURL: process.env.URL,
         ...devices["Desktop Firefox"],
       },
     },
@@ -53,7 +53,7 @@ export default defineConfig({
     {
       name: "webkit",
       use: {
-        baseURL: "https://todomvc.com/examples/react/dist/",
+        baseURL: process.env.URL,
         ...devices["Desktop Safari"],
       },
     },
