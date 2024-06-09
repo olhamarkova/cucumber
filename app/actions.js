@@ -1,5 +1,5 @@
 import TodoPage from "../pages/TodoPage.js";
-import { text } from "../dataProviders/pageDP.js";
+import { text } from "../data/pageDP.js";
 import "dotenv/config";
 
 export class TodoActions {
