@@ -6,8 +6,6 @@ Feature: Filtering Todos
   @Smoke @Q-5
   Scenario: User shall see filters for todos
     Given user is on the Todo app page
-    When they add a new todo "<todo>"
+    When they add a new todo "Buy bread"
     Then filters "All", "Active" and "Completed" are displayed
     And filter "All" is selected
-
-  # new

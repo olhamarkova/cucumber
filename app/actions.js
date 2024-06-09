@@ -21,4 +21,10 @@ export class TodoActions {
   async openMainPage() {
     await this.todoPage.mainPageURL.click();
   }
+
+  async editTodo(oldTodo, newTodo) {
+    await this.todoPage.todoLabel.dblclick();
+    await this.todoPage.editTodoInput(oldTodo).fill(newTodo);
+    await this.todoPage.editTodoInput(oldTodo).press("Enter");
+  }
 }

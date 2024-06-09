@@ -18,6 +18,10 @@ export default class TodoPage {
     this.deleteTodoButton = this.page.getByTestId("todo-item-button");
   }
 
+  editTodoInput(todo) {
+    return this.page.locator(`#todo-input[value="${todo}"]`);
+  }
+
   toggleTodoCheckbox(index) {
     return this.page.getByTestId("todo-item-toggle").nth(index - 1);
   }
@@ -30,7 +34,6 @@ export default class TodoPage {
     return this.page.getByPlaceholder(placeholder);
   }
 
-  //check
   filter(filterText) {
     return this.page
       .locator('ul[data-testid="footer-navigation"] li a')

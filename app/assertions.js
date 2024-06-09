@@ -13,7 +13,9 @@ export class TodoAssertions {
   }
 
   async validateTodoText(text, index) {
-    await expect(this.todoPage.todoLabel.nth(index - 1)).toHaveText(text);
+    await expect(this.todoPage.todoLabel.nth(Number(index) - 1)).toHaveText(
+      text
+    );
   }
 
   async validateTodoCountMsg(msg) {
@@ -30,5 +32,9 @@ export class TodoAssertions {
 
   async validateActiveFilter(filterText) {
     await expect(this.todoPage.filter(filterText)).toHaveClass("selected");
+  }
+
+  async validateFilters(filterText) {
+    await expect(this.todoPage.filter(filterText)).toBeVisible();
   }
 }
