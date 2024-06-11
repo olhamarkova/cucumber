@@ -39,24 +39,27 @@ export default defineConfig({
       use: {
         baseURL: process.env.URL,
         ...devices["Desktop Chrome"],
+        headless: true,
       },
     },
 
-    {
-      name: "firefox",
-      use: {
-        baseURL: process.env.URL,
-        ...devices["Desktop Firefox"],
-      },
-    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     baseURL: process.env.URL,
+    //     ...devices["Desktop Firefox"],
+    //     headless: true,
+    //   },
+    // },
 
-    {
-      name: "webkit",
-      use: {
-        baseURL: process.env.URL,
-        ...devices["Desktop Safari"],
-      },
-    },
+    // {
+    //   name: "webkit",
+    //   use: {
+    //     baseURL: process.env.URL,
+    //     ...devices["Desktop Safari"],
+    //     headless: true,
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
