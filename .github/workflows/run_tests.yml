@@ -3,8 +3,6 @@ on: push
 jobs:
   e2e-tests:
     runs-on: macos-latest
-    env:
-      env_vars: ${{ vars.URL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -31,4 +29,4 @@ jobs:
         run: npm run test
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ vars.URL }}
+          URL: ${{ env.URL }}
