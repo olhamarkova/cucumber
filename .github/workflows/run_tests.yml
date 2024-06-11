@@ -21,12 +21,13 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Show env var
+      - name: Create env file
         run: |
-          echo $URL
+          touch .env
+          echo API_KEY=${{ secrets.URL }} >> .env
+          cat .env
 
       - name: Run tests
         run: npm run test
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ secrets.URL }}
