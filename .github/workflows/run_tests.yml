@@ -23,6 +23,10 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Show env var
+        run: |
+          echo $URL
+
       - name: Run tests
         run: npm run test
         env:
