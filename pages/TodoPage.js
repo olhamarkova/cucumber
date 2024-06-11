@@ -1,5 +1,4 @@
 import { chromium } from "@playwright/test";
-import { text } from "../data/pageDP.js";
 
 let page;
 let browser;
