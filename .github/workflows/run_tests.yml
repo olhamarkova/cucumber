@@ -32,7 +32,12 @@ jobs:
       - name: Create Qase Run
         id: run_tests
         run: |
-          timeout 600 npm run qase-run
+          (
+            sleep 60
+            echo "Cucumber tests timed out after 1 minute."
+            kill $$
+          ) & 
+          npm run qase-run
           TEST_EXIT_CODE=$?
           if [ $TEST_EXIT_CODE -eq 124 ]; then
             echo "Cucumber tests timed out after 10 minutes."
