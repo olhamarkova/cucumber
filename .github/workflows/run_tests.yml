@@ -23,26 +23,27 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Install gtimeout
+        run: brew install coreutils
+
       - name: Create env file
         run: |
           touch .env
           echo URL=${{ secrets.URL }} >> .env
           cat .env
 
-      - name: Create Qase Run
+      - name: Run Cucumber tests with timeout
         id: run_tests
         run: |
-          npm run qase-run
-          ( ./gradlew cucumber & ) | sleep 60
-          TEST_EXIT_CODE=$?
-
-          if [ $TEST_EXIT_CODE -eq 124 ]; then
-            echo "Cucumber tests timed out after 1 minute."
-            exit 1
-          elif [ $TEST_EXIT_CODE -ne 0 ]; then
-            echo "Cucumber tests failed."
+          gtimeout 1m npm run test || {
+            TEST_EXIT_CODE=$?
+            if [ $TEST_EXIT_CODE -eq 124 ]; then
+              echo "Cucumber tests timed out after 1 minute."
+            else
+              echo "Cucumber tests failed with exit code $TEST_EXIT_CODE."
+            fi
             exit $TEST_EXIT_CODE
-          fi
+          }
 
       - name: Notify on failure
         if: failure()
