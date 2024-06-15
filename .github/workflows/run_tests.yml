@@ -45,6 +45,17 @@ jobs:
             exit $TEST_EXIT_CODE
           }
 
+      - name: Generate Cucumber report
+        if: always()
+        run: npm run generate-report
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: cucumber-report
+          path: report/cucumber
+
       - name: Notify on failure
         if: failure()
         run: echo "Cucumber test failed."
