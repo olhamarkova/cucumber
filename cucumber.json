@@ -1,6 +1,7 @@
 {
   "default": {
     "parallel": 2,
-    "format": ["html:report/cucumber-report.html"]
+    "format": ["html:report/cucumber-report.html"],
+    "forceExit": true
   }
 }
