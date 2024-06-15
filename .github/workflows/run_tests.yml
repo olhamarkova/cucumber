@@ -35,7 +35,7 @@ jobs:
       - name: Run Cucumber tests with timeout
         id: run_tests
         run: |
-          gtimeout 1m npm run test || {
+          gtimeout 1m npm run qase-run || {
             TEST_EXIT_CODE=$?
             if [ $TEST_EXIT_CODE -eq 124 ]; then
               echo "Cucumber tests timed out after 1 minute."
