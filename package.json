@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js",
-    "regression": "npx cucumber-js --tags '@Regression'",
-    "report": "npx cucumber-js --format html:report/cucumber-report.html",
-    "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter -i features"
+    "test": "npx cucumber-js --exit",
+    "regression": "npx cucumber-js --tags '@Regression' --exit",
+    "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter features"
   },
   "keywords": [],
   "author": "",
