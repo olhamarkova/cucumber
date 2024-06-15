@@ -1,5 +1,7 @@
 name: TodoMVC Cucumber Tests
-on: push
+on:
+  push:
+    branches: [main, tests]
 jobs:
   e2e-tests:
     runs-on: macos-latest
@@ -28,6 +30,6 @@ jobs:
           cat .env
 
       - name: Run tests
-        run: npm run test
+        run: npm run qase-run
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
