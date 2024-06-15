@@ -7,5 +7,4 @@ node_modules/
 /screenshots
 qase.config.json
 logs
-cucumber-report.html
 build/
