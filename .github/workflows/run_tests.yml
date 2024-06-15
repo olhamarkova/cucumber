@@ -1,7 +1,7 @@
 name: TodoMVC Cucumber Tests
 on:
-  push:
-    branches: [main, tests]
+  schedule:
+    - cron: "00 20 * * 6"
 jobs:
   e2e-tests:
     runs-on: macos-latest
@@ -23,9 +23,6 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Install gtimeout
-        run: brew install coreutils
-
       - name: Create env file
         run: |
           touch .env
@@ -33,7 +30,7 @@ jobs:
           cat .env
 
       - name: Run Qase tests
-        run: npm run qase-run --exit
+        run: npm run tests
 
       - name: Notify on failure
         if: failure()
