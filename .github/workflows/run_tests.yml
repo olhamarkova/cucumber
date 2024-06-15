@@ -32,29 +32,8 @@ jobs:
           echo URL=${{ secrets.URL }} >> .env
           cat .env
 
-      - name: Run Cucumber tests with timeout
-        id: run_tests
-        run: |
-          gtimeout 1m npm run qase-run || {
-            TEST_EXIT_CODE=$?
-            if [ $TEST_EXIT_CODE -eq 124 ]; then
-              echo "Cucumber tests timed out after 1 minute."
-            else
-              echo "Cucumber tests failed with exit code $TEST_EXIT_CODE."
-            fi
-            exit $TEST_EXIT_CODE
-          }
-
-      - name: Generate Cucumber report
-        if: always()
-        run: npm run generate-report
-
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: cucumber-report
-          path: report/cucumber
+      - name: Run Qase tests
+        run: npm run qase-run --exit
 
       - name: Notify on failure
         if: failure()
