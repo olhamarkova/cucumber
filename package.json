@@ -7,7 +7,7 @@
     "test": "npx cucumber-js",
     "regression": "npx cucumber-js --tags '@Regression'",
     "report": "npx cucumber-js --format html:report/cucumber-report.html",
-    "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter features"
+    "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter features --import features/support/steps -import features/support/hooks"
   },
   "keywords": [],
   "author": "",

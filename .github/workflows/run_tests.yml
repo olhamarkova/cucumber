@@ -30,7 +30,21 @@ jobs:
           cat .env
 
       - name: Create Qase Run
-        run: npm run qase-run
+        id: run_tests
+        run: |
+          timeout 600 npm run qase-run
+          TEST_EXIT_CODE=$?
+          if [ $TEST_EXIT_CODE -eq 124 ]; then
+            echo "Cucumber tests timed out after 10 minutes."
+            exit 1
+          elif [ $TEST_EXIT_CODE -ne 0 ]; then
+            echo "Cucumber tests failed."
+            exit $TEST_EXIT_CODE
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Cucumber test failed."
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
