@@ -48,4 +48,8 @@ export class TodoAssertions {
       await expect(this.todoPage.todoItem(i)).toHaveClass(className);
     }
   }
+
+  async validateActiveTodo(index) {
+    await expect(this.todoPage.todoItem(index)).not.toHaveClass("completed");
+  }
 }

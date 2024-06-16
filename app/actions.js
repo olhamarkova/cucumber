@@ -31,4 +31,8 @@ export class TodoActions {
   async toggleAllTodos() {
     await this.todoPage.toggleAllButton.click();
   }
+
+  async chooseFilter(filterText) {
+    await this.todoPage.filter(filterText).click();
+  }
 }

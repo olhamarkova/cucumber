@@ -36,3 +36,7 @@ When("they add {string} todos", async function (string) {
     await todo.addNewTodo(`todo${i + 1}`);
   }
 });
+
+When("the user clicks on {string} filter", async function (string) {
+  await todo.chooseFilter(string);
+});

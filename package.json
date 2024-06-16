@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npx cucumber-js --exit",
     "regression": "npx cucumber-js --tags '@Regression' --exit",
+    "smoke": "npx cucumber-js --tags '@Smoke' --exit",
     "qase-run": "npx cucumber-js -f cucumberjs-qase-reporter features"
   },
   "keywords": [],
