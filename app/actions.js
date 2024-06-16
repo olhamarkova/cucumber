@@ -27,4 +27,8 @@ export class TodoActions {
     await this.todoPage.editTodoInput(oldTodo).fill(newTodo);
     await this.todoPage.editTodoInput(oldTodo).press("Enter");
   }
+
+  async toggleAllTodos() {
+    await this.todoPage.toggleAllButton.click();
+  }
 }

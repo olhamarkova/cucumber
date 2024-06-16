@@ -54,3 +54,11 @@ Then("the {string} todo is marked as completed", async function (string) {
 Then("they see the message {string}", async function (string) {
   await assert.validateTodoCountMsg(string);
 });
+
+Then("all todos are marked as {string}", async function (string) {
+  if (string === "active") {
+    await assert.validateTodoList("");
+  } else {
+    await assert.validateTodoList(string);
+  }
+});

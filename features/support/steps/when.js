@@ -25,3 +25,14 @@ When(
 When("the user toggles {string} todo", async function (string) {
   await todo.toggleTodo(string);
 });
+
+When("the user clicks on Toggle All button", async function () {
+  await todo.toggleAllTodos();
+});
+
+When("they add {string} todos", async function (string) {
+  const countOfTodos = Number(string);
+  for (let i = 0; i < countOfTodos; i++) {
+    await todo.addNewTodo(`todo${i + 1}`);
+  }
+});

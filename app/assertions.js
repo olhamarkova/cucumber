@@ -41,4 +41,11 @@ export class TodoAssertions {
   async validateCompletedTodo(index) {
     await expect(this.todoPage.todoItem(index)).toHaveClass("completed");
   }
+
+  async validateTodoList(className) {
+    const todos = await this.todoPage.todoItems;
+    for (let i = 0; i < todos.count(); i++) {
+      await expect(this.todoPage.todoItem(i)).toHaveClass(className);
+    }
+  }
 }
