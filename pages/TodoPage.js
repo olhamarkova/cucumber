@@ -17,6 +17,10 @@ export default class TodoPage {
     this.deleteTodoButton = this.page.getByTestId("todo-item-button");
   }
 
+  todoItem(index) {
+    return this.page.getByTestId("todo-item").nth(index - 1);
+  }
+
   editTodoInput(todo) {
     return this.page.locator(`#todo-input[value="${todo}"]`);
   }

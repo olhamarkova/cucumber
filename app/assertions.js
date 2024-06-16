@@ -37,4 +37,8 @@ export class TodoAssertions {
   async validateFilters(filterText) {
     await expect(this.todoPage.filter(filterText)).toBeVisible();
   }
+
+  async validateCompletedTodo(index) {
+    await expect(this.todoPage.todoItem(index)).toHaveClass("completed");
+  }
 }

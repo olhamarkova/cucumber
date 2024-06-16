@@ -54,3 +54,11 @@ Then(
 Then("filter {string} is selected", async function (string) {
   await assert.validateActiveFilter(string);
 });
+
+Then("the {string} todo is marked as completed", async function (string) {
+  await assert.validateCompletedTodo(string);
+});
+
+Then("they see the message {string}", async function (string) {
+  await assert.validateTodoCountMsg(string);
+});

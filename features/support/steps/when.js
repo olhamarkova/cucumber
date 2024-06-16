@@ -21,3 +21,7 @@ When(
     await todo.editTodo(string, string1);
   }
 );
+
+When("the user toggles {string} todo", async function (string) {
+  await todo.toggleTodo(string);
+});
