@@ -40,3 +40,7 @@ When("they add {string} todos", async function (string) {
 When("the user clicks on {string} filter", async function (string) {
   await todo.chooseFilter(string);
 });
+
+When("the user clicks on Clear Completed button", async function () {
+  await todo.clearCompleted();
+});

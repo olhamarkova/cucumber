@@ -17,6 +17,10 @@ export default class TodoPage {
     this.deleteTodoButton = this.page.getByTestId("todo-item-button");
     this.toggleAllButton = this.page.getByTestId("toggle-all");
     this.todoItems = this.page.getByTestId("todo-item");
+    this.clearCompletedButton = this.page.getByRole("button", {
+      name: "Clear completed",
+      exact: true,
+    });
   }
 
   todoItem(index) {

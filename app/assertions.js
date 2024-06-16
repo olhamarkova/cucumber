@@ -38,10 +38,6 @@ export class TodoAssertions {
     await expect(this.todoPage.filter(filterText)).toBeVisible();
   }
 
-  async validateCompletedTodo(index) {
-    await expect(this.todoPage.todoItem(index)).toHaveClass("completed");
-  }
-
   async validateTodoList(className) {
     const todos = await this.todoPage.todoItems;
     for (let i = 0; i < todos.count(); i++) {
@@ -51,5 +47,13 @@ export class TodoAssertions {
 
   async validateActiveTodo(index) {
     await expect(this.todoPage.todoItem(index)).not.toHaveClass("completed");
+  }
+
+  async validateCompletedTodo(index) {
+    await expect(this.todoPage.todoItem(index)).toHaveClass("completed");
+  }
+
+  async validateNoTodos() {
+    await expect(this.todoPage.todoItems).not.toBeVisible();
   }
 }

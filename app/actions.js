@@ -35,4 +35,8 @@ export class TodoActions {
   async chooseFilter(filterText) {
     await this.todoPage.filter(filterText).click();
   }
+
+  async clearCompleted() {
+    await this.todoPage.clearCompletedButton.click();
+  }
 }

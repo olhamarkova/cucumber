@@ -63,6 +63,14 @@ Then("all todos are marked as {string}", async function (string) {
   }
 });
 
-Then("they see {string} active todo", async function (string) {
-  await assert.validateActiveTodo(string);
+Then("they see {string} {string} todo", async function (string, string2) {
+  if (string2 === "active") {
+    await assert.validateActiveTodo(string);
+  } else {
+    await assert.validateCompletedTodo(string);
+  }
+});
+
+Then("no todos are displayed", async function () {
+  await assert.validateNoTodos();
 });
