@@ -44,3 +44,7 @@ When("the user clicks on {string} filter", async function (string) {
 When("the user clicks on Clear Completed button", async function () {
   await todo.clearCompleted();
 });
+
+When("they click on the X icon near {string} todo", async function (string) {
+  await todo.deleteTodo(string);
+});

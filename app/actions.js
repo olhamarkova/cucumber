@@ -39,4 +39,9 @@ export class TodoActions {
   async clearCompleted() {
     await this.todoPage.clearCompletedButton.click();
   }
+
+  async deleteTodo(index) {
+    await this.todoPage.todoItem(index).hover();
+    await this.todoPage.deleteTodoButton.click();
+  }
 }
