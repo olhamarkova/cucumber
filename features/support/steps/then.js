@@ -3,14 +3,6 @@ import { TodoAssertions } from "../../../app/assertions.js";
 
 const assert = new TodoAssertions();
 
-Then(
-  "they see the message {string} and a {string} todo added with {string} text",
-  async function (string, string2, string3) {
-    await assert.validateTodoCountMsg(string);
-    await assert.validateTodoText(string3, string2);
-  }
-);
-
 Then("the page title should be {string}", async function (title) {
   await assert.checkTitle(title);
 });

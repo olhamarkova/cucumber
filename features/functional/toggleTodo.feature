@@ -3,7 +3,7 @@ Feature: Toggle Todos
   I want to be able to toggle a todo
   So I can mark todo as completed
 
-  @Smoke @Q-5
+  @Smoke @Q-6
   Scenario: User shall see filters for todos
     Given user is on the Todo app page
     And they add a new todo "Buy bread"
