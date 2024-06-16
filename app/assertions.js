@@ -56,4 +56,8 @@ export class TodoAssertions {
   async validateNoTodos() {
     await expect(this.todoPage.todoItems).not.toBeVisible();
   }
+
+  async validateClearCompletedButton() {
+    await expect(this.todoPage.clearCompletedButton).toBeDisabled();
+  }
 }

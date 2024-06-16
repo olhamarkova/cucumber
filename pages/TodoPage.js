@@ -4,7 +4,7 @@ let page;
 let browser;
 
 browser = await chromium.launch({
-  headless: true,
+  headless: false,
 });
 page = await browser.newPage();
 

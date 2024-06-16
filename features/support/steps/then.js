@@ -74,3 +74,7 @@ Then("they see {string} {string} todo", async function (string, string2) {
 Then("no todos are displayed", async function () {
   await assert.validateNoTodos();
 });
+
+Then("the Clear Completed button is disabled", async function () {
+  await assert.validateClearCompletedButton();
+});
