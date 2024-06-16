@@ -37,4 +37,27 @@ export class TodoAssertions {
   async validateFilters(filterText) {
     await expect(this.todoPage.filter(filterText)).toBeVisible();
   }
+
+  async validateTodoList(className) {
+    const todos = await this.todoPage.todoItems;
+    for (let i = 0; i < todos.count(); i++) {
+      await expect(this.todoPage.todoItem(i)).toHaveClass(className);
+    }
+  }
+
+  async validateActiveTodo(index) {
+    await expect(this.todoPage.todoItem(index)).not.toHaveClass("completed");
+  }
+
+  async validateCompletedTodo(index) {
+    await expect(this.todoPage.todoItem(index)).toHaveClass("completed");
+  }
+
+  async validateNoTodos() {
+    await expect(this.todoPage.todoItems).not.toBeVisible();
+  }
+
+  async validateClearCompletedButton() {
+    await expect(this.todoPage.clearCompletedButton).toBeDisabled();
+  }
 }

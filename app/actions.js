@@ -27,4 +27,21 @@ export class TodoActions {
     await this.todoPage.editTodoInput(oldTodo).fill(newTodo);
     await this.todoPage.editTodoInput(oldTodo).press("Enter");
   }
+
+  async toggleAllTodos() {
+    await this.todoPage.toggleAllButton.click();
+  }
+
+  async chooseFilter(filterText) {
+    await this.todoPage.filter(filterText).click();
+  }
+
+  async clearCompleted() {
+    await this.todoPage.clearCompletedButton.click();
+  }
+
+  async deleteTodo(index) {
+    await this.todoPage.todoItem(index).hover();
+    await this.todoPage.deleteTodoButton.click();
+  }
 }

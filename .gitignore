@@ -4,8 +4,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 .env
-/screenshots
 qase.config.json
 logs
-cucumber-report.html
 build/

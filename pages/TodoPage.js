@@ -1,11 +1,10 @@
 import { chromium } from "@playwright/test";
-import { text } from "../data/pageDP.js";
 
 let page;
 let browser;
 
 browser = await chromium.launch({
-  headless: false,
+  headless: true,
 });
 page = await browser.newPage();
 
@@ -16,6 +15,16 @@ export default class TodoPage {
     this.header = this.page.locator("h1");
     this.todoLabel = this.page.getByTestId("todo-item-label");
     this.deleteTodoButton = this.page.getByTestId("todo-item-button");
+    this.toggleAllButton = this.page.getByTestId("toggle-all");
+    this.todoItems = this.page.getByTestId("todo-item");
+    this.clearCompletedButton = this.page.getByRole("button", {
+      name: "Clear completed",
+      exact: true,
+    });
+  }
+
+  todoItem(index) {
+    return this.page.getByTestId("todo-item").nth(index - 1);
   }
 
   editTodoInput(todo) {

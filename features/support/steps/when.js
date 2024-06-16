@@ -21,3 +21,30 @@ When(
     await todo.editTodo(string, string1);
   }
 );
+
+When("the user toggles {string} todo", async function (string) {
+  await todo.toggleTodo(string);
+});
+
+When("the user clicks on Toggle All button", async function () {
+  await todo.toggleAllTodos();
+});
+
+When("they add {string} todos", async function (string) {
+  const countOfTodos = Number(string);
+  for (let i = 0; i < countOfTodos; i++) {
+    await todo.addNewTodo(`todo${i + 1}`);
+  }
+});
+
+When("the user clicks on {string} filter", async function (string) {
+  await todo.chooseFilter(string);
+});
+
+When("the user clicks on Clear Completed button", async function () {
+  await todo.clearCompleted();
+});
+
+When("they click on the X icon near {string} todo", async function (string) {
+  await todo.deleteTodo(string);
+});
