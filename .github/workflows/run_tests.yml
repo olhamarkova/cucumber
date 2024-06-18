@@ -35,7 +35,7 @@ jobs:
           cat .env
 
       - name: Run Cucumber tests
-        run: npm run qase-run
+        run: npm run tests
 
       - name: Notify on failure
         if: failure()
