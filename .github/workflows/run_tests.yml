@@ -34,8 +34,15 @@ jobs:
           echo URL=${{ secrets.URL }} >> .env
           cat .env
 
+      - name: Configure Qase
+        uses: cschleiden/replace-tokens@v1
+        with:
+          files: "qase.config.json"
+        env:
+          QASE_TOKEN: ${{ secrets.QASE_TOKEN }}
+
       - name: Run Cucumber tests
-        run: npm run tests
+        run: npm run qase-run
 
       - name: Notify on failure
         if: failure()

@@ -1,0 +1,32 @@
+{
+  "mode": "testops",
+  "fallback": "report",
+  "debug": false,
+  "environment": "Production",
+  "captureLogs": false,
+  "report": {
+    "driver": "local",
+    "connection": {
+      "local": {
+        "path": "./build/qase-report",
+        "format": "json"
+      }
+    }
+  },
+  "testops": {
+    "api": {
+      "token": "#{QASE_TOKEN}#",
+      "host": "qase.io"
+    },
+    "run": {
+      "title": "Regress run",
+      "description": "Cucumber tests",
+      "complete": true
+    },
+    "defect": false,
+    "project": "TODOMVC",
+    "batch": {
+      "size": 100
+    }
+  }
+}
