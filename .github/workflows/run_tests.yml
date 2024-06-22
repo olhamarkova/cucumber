@@ -45,20 +45,5 @@ jobs:
       - name: Run Cucumber tests
         run: npm run qase-run
 
-      - name: Create report
-        uses: mt185252/cucumber-html-report-generator@v1
-        with:
-          report-theme: "bootstrap"
-          json-file-path: ".report/report.json"
-
-      - name: Upload HTML report
-        id: artifact_upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: html-report
-          path: ".report/report.html"
-          if-no-files-found: error
-          retention-days: 7
-
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
