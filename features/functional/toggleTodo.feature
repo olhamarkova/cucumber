@@ -4,7 +4,7 @@ Feature: Toggle Todos
   So I can mark todo as completed
 
   @Regression @Q-6
-  Scenario: User shall see filters for todos
+  Scenario: User shall toggle a todo
     Given user is on the Todo app page
     And they add a new todo "Buy bread"
     When the user toggles "1" todo
