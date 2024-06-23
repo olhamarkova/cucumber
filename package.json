@@ -8,7 +8,7 @@
     "regression": "npx cucumber-js --tags '@Regression' --exit",
     "smoke": "npx cucumber-js --tags '@Smoke' --exit",
     "negative": "npx cucumber-js --tags '@Negative' --exit",
-    "qase-run": "npx cucumber-js --exit -f cucumberjs-qase-reporter features"
+    "qase-run": "npx cucumber-js -f html:report/cucumber-report.html --exit -f cucumberjs-qase-reporter features"
   },
   "keywords": [],
   "author": "",

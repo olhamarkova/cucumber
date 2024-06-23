@@ -1,6 +1,5 @@
 {
   "default": {
-    "parallel": 2,
-    "format": ["html:report/cucumber-report.html"]
+    "parallel": 2
   }
 }

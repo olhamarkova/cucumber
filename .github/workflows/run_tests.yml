@@ -42,8 +42,15 @@ jobs:
         env:
           QASE_TOKEN: ${{ secrets.QASE_TOKEN }}
 
-      - name: Run Cucumber tests
+      - name: Run Cucumber Tests
         run: npm run qase-run
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: cucumber-report.html
+          path: ./report/**
+          retention-days: 10
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
