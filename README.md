@@ -1,3 +1,5 @@
+[![TodoMVC Cucumber Tests](https://github.com/olhamarkova/cucumber/actions/workflows/run_tests.yml/badge.svg)](https://github.com/olhamarkova/cucumber/actions/workflows/run_tests.yml)
+
 **Simple TodoMVC Project**
 
 Test Automation Solution for TodoMVC.
