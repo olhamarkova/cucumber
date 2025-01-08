@@ -1,5 +1,5 @@
 import { After } from "@cucumber/cucumber";
-import TodoPage from "../../../pages/TodoPage.js";
+import TodoPage from "../../../app/TodoPage.js";
 
 const todoPage = new TodoPage();
 

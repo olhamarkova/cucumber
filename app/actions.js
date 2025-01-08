@@ -1,4 +1,4 @@
-import TodoPage from "../pages/TodoPage.js";
+import TodoPage from "./TodoPage.js";
 import { text } from "../data/pageDP.js";
 import "dotenv/config";
 

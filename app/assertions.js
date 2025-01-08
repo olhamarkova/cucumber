@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import TodoPage from "../pages/TodoPage.js";
+import TodoPage from "./TodoPage.js";
 
 export class TodoAssertions {
   todoPage = new TodoPage();
